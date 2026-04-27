@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+<meta name="theme-color" content="#FAFAF7" />
+<title>THE CLIMB GANGNAM TOUR 2026</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css">
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          paper: '#FAFAF7',
+          surface: '#FFFFFF',
+          mute: '#F4F2ED',
+          ink: { 900: '#0A0A0A', 700: '#3F3F3F', 500: '#6B6B6B', 300: '#A1A1A1' },
+          line: '#E7E4DD',
+          lineStrong: '#D4D0C7',
+          accent: '#DC2626',
+          accentSoft: '#FEE2E2',
+        },
+        fontFamily: {
+          sans: ['Pretendard', '-apple-system', 'BlinkMacSystemFont', 'system-ui', 'sans-serif'],
+        }
+      }
+    }
+  }
+</script>
+<style>
+  html { -webkit-text-size-adjust: 100%; }
+  body { 
+    font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+    background: #FAFAF7;
+    color: #0A0A0A;
+    -webkit-font-smoothing: antialiased;
+    line-height: 1.6;
+  }
+  p, li { line-height: 1.7; }
+  
+  .grade-dot { display: inline-block; width: 10px; height: 10px; border-radius: 9999px; flex-shrink: 0; }
+  
+  .grade-pill { 
+    display: inline-flex; align-items: center; gap: 6px; 
+    padding: 5px 11px; border-radius: 9999px; 
+    font-size: 13px; font-weight: 700;
+    border: 1.5px solid;
+  }
+  .pill-purple { color: #9333EA; border-color: #9333EA; background: #FAF5FF; }
+  .pill-pink { color: #DB2777; border-color: #DB2777; background: #FDF2F8; }
+  .pill-red { color: #DC2626; border-color: #DC2626; background: #FEF2F2; }
+  .pill-blue { color: #2563EB; border-color: #2563EB; background: #EFF6FF; }
+  .pill-green { color: #16A34A; border-color: #16A34A; background: #F0FDF4; }
+  
+  .num { font-feature-settings: "tnum"; font-variant-numeric: tabular-nums; }
+  
+  .shadow-soft { box-shadow: 0 1px 2px rgba(0,0,0,0.04), 0 1px 3px rgba(0,0,0,0.06); }
+  .shadow-card { box-shadow: 0 2px 8px rgba(0,0,0,0.04), 0 4px 16px rgba(0,0,0,0.04); }
+  
+  .hero-bg {
+    background: 
+      radial-gradient(ellipse 80% 60% at 50% 0%, rgba(220,38,38,0.08), transparent 70%),
+      radial-gradient(ellipse 60% 50% at 100% 100%, rgba(219,39,119,0.06), transparent 70%),
+      #FAFAF7;
+  }
+  
+  .map-row {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr auto;
+    align-items: center;
+    gap: 8px;
+    padding: 14px 12px;
+    border-radius: 12px;
+  }
+  @media (min-width: 480px) {
+    .map-row { gap: 16px; padding: 16px; }
+  }
+  .map-arrow { color: #A1A1A1; font-weight: 700; font-size: 16px; }
+</style>
+</head>
+<body>
+
+<!-- ============================================ HERO ============================================ -->
+<div class="hero-bg">
+  <div class="max-w-3xl mx-auto px-5 pt-10 pb-14 sm:pt-16 sm:pb-20">
+    <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-accentSoft border border-accent/20 mb-6">
+      <span class="w-1.5 h-1.5 rounded-full bg-accent animate-pulse"></span>
+      <span class="text-xs text-accent font-bold tracking-wider">CREW EVENT · 2026.05.10 SAT</span>
+    </div>
+    
+    <h1 class="text-[40px] leading-[1.1] sm:text-6xl sm:leading-[1.05] font-black tracking-tight">
+      강남 6개 지점,<br/>
+      <span class="text-accent">하루 안에</span> 정주행.
+    </h1>
+    <p class="mt-5 text-base sm:text-lg text-ink-700 max-w-xl">
+      평소 실력보다 살짝 쉬운 색을 정한 시간 안에 누가 더 많이 풀 수 있을까?
+    </p>
+    
+    <div class="mt-8">
+      <div class="text-xs text-ink-500 mb-3 font-bold tracking-wider">VENUES</div>
+      <div class="flex flex-wrap gap-2">
+        <span class="px-3.5 py-2 rounded-lg bg-surface border border-line text-sm font-bold shadow-soft">신사</span>
+        <span class="px-3.5 py-2 rounded-lg bg-surface border border-line text-sm font-bold shadow-soft">논현</span>
+        <span class="px-3.5 py-2 rounded-lg bg-surface border border-line text-sm font-bold shadow-soft">강남</span>
+        <span class="px-3.5 py-2 rounded-lg bg-surface border border-line text-sm font-bold shadow-soft">양재</span>
+        <span class="px-3.5 py-2 rounded-lg bg-surface border border-line text-sm font-bold shadow-soft">사당</span>
+        <span class="px-3.5 py-2 rounded-lg bg-surface border border-line text-sm font-bold shadow-soft">이수</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ============================================ 한 줄 룰 ============================================ -->
+<div class="max-w-3xl mx-auto px-5 py-12 sm:py-14">
+  <div class="bg-surface border border-line rounded-3xl p-6 sm:p-8 shadow-card">
+    <div class="text-xs text-accent uppercase tracking-wider mb-3 font-black">REGULATION</div>
+    <h2 class="text-2xl sm:text-3xl font-black mb-7 leading-tight">대회 룰, 한 줄.</h2>
+    
+    <div class="bg-mute rounded-2xl p-5 sm:p-6 mb-6">
+      <p class="text-base sm:text-lg font-bold text-ink-900 leading-relaxed">
+        평소 푸는 색보다 <span class="text-accent">살짝 쉬운 색</span>을<br/>
+        정해진 시간 안에 <span class="text-accent">누가 더 많이</span> 푸느냐
+      </p>
+    </div>
+
+    <div class="space-y-4">
+      <div class="flex gap-3">
+        <div class="shrink-0 w-7 h-7 rounded-full bg-ink-900 text-white font-black flex items-center justify-center text-xs">1</div>
+        <p class="text-sm sm:text-base text-ink-700 leading-relaxed pt-0.5">
+          <strong class="text-ink-900">6개 지점을 다 같이</strong> 한 곳씩 차례로 돕니다.
+        </p>
+      </div>
+      <div class="flex gap-3">
+        <div class="shrink-0 w-7 h-7 rounded-full bg-ink-900 text-white font-black flex items-center justify-center text-xs">2</div>
+        <p class="text-sm sm:text-base text-ink-700 leading-relaxed pt-0.5">
+          각 지점에서 <strong class="text-ink-900">정해진 색</strong>을 풀어 갯수를 기록합니다.
+        </p>
+      </div>
+      <div class="flex gap-3">
+        <div class="shrink-0 w-7 h-7 rounded-full bg-ink-900 text-white font-black flex items-center justify-center text-xs">3</div>
+        <p class="text-sm sm:text-base text-ink-700 leading-relaxed pt-0.5">
+          <strong class="text-ink-900">완등 비율</strong>이 가장 높은 사람이 카테고리별로 1등.
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ============================================ 핵심 정보 ============================================ -->
+<div class="max-w-3xl mx-auto px-5 pb-12 sm:pb-14">
+  <div class="grid grid-cols-2 gap-3">
+    <div class="bg-surface border border-line rounded-2xl p-5 shadow-soft">
+      <div class="text-xs text-ink-500 uppercase tracking-wider mb-2 font-bold">일시</div>
+      <div class="text-xl font-black">5월 10일</div>
+      <div class="text-sm text-ink-700 mt-1">토요일</div>
+    </div>
+    <div class="bg-surface border border-line rounded-2xl p-5 shadow-soft">
+      <div class="text-xs text-ink-500 uppercase tracking-wider mb-2 font-bold">참가비</div>
+      <div class="text-xl font-black num">10,000원</div>
+      <div class="text-sm text-ink-700 mt-1">크루·게스트 동일</div>
+    </div>
+    <div class="bg-surface border border-line rounded-2xl p-5 shadow-soft">
+      <div class="text-xs text-ink-500 uppercase tracking-wider mb-2 font-bold">시상</div>
+      <div class="text-xl font-black">2명</div>
+      <div class="text-sm text-ink-700 mt-1">상급 1, 중·초급 1</div>
+    </div>
+    <div class="bg-surface border border-line rounded-2xl p-5 shadow-soft">
+      <div class="text-xs text-ink-500 uppercase tracking-wider mb-2 font-bold">채점</div>
+      <div class="text-xl font-black">완등 비율</div>
+      <div class="text-sm text-ink-700 mt-1">양심 기록</div>
+    </div>
+  </div>
+
+  <!-- 참가 자격 강조 박스 -->
+  <div class="mt-3 bg-surface border-2 border-accent rounded-2xl p-5 shadow-soft">
+    <div class="flex items-start gap-3">
+      <div class="shrink-0 w-9 h-9 rounded-full bg-accent text-white flex items-center justify-center text-base font-black">!</div>
+      <div class="flex-1">
+        <div class="text-xs text-accent uppercase tracking-wider mb-1.5 font-black">필독 · 참가 자격</div>
+        <div class="font-black text-base sm:text-lg mb-2 leading-tight">
+          <span class="text-accent">횟수권 / 개월권</span> 보유자만 참가할 수 있어요
+        </div>
+        <p class="text-sm text-ink-700 leading-relaxed">
+          <strong class="text-ink-900">일일권은 하루에 한 지점만</strong> 이용 가능해서 6개 지점을 다 도는 이 대회는 참가가 불가능해요. 본인 이용권을 꼭 확인해주세요.
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ============================================ 카테고리 매핑 ============================================ -->
+<div class="max-w-3xl mx-auto px-5 py-12 sm:py-14">
+  <div class="text-xs text-accent uppercase tracking-wider mb-3 font-black">FIND YOUR LEVEL</div>
+  <h2 class="text-3xl sm:text-4xl font-black mb-3 leading-tight">나는 어디로?</h2>
+  <p class="text-ink-700 mb-7 text-base">평소 본인이 푸는 색을 기준으로 카테고리가 정해져요.</p>
+
+  <div class="bg-surface border border-line rounded-3xl p-3 sm:p-5 shadow-card">
+    <div class="grid grid-cols-[1fr_auto_1fr_auto] gap-2 sm:gap-4 px-3 pb-3 mb-1 border-b border-line text-[11px] sm:text-xs text-ink-500 font-bold tracking-wider">
+      <div>평소 푸는 색</div>
+      <div></div>
+      <div>대회에서 풀 색</div>
+      <div class="text-right">조</div>
+    </div>
+
+    <div class="map-row hover:bg-mute transition">
+      <div><span class="grade-pill pill-purple"><span class="grade-dot" style="background: #9333EA;"></span>보라</span></div>
+      <div class="map-arrow">→</div>
+      <div><span class="grade-pill pill-red"><span class="grade-dot" style="background: #DC2626;"></span>빨강</span></div>
+      <div class="text-right text-sm font-black">상급</div>
+    </div>
+
+    <div class="map-row hover:bg-mute transition">
+      <div><span class="grade-pill pill-pink"><span class="grade-dot" style="background: #DB2777;"></span>핑크</span></div>
+      <div class="map-arrow">→</div>
+      <div><span class="grade-pill pill-red"><span class="grade-dot" style="background: #DC2626;"></span>빨강</span></div>
+      <div class="text-right text-sm font-black">상급</div>
+    </div>
+
+    <div class="map-row hover:bg-mute transition">
+      <div><span class="grade-pill pill-pink"><span class="grade-dot" style="background: #DB2777;"></span>핑크</span></div>
+      <div class="map-arrow">→</div>
+      <div><span class="grade-pill pill-blue"><span class="grade-dot" style="background: #2563EB;"></span>파랑</span></div>
+      <div class="text-right text-sm font-black">중급</div>
+    </div>
+
+    <div class="map-row hover:bg-mute transition">
+      <div><span class="grade-pill pill-red"><span class="grade-dot" style="background: #DC2626;"></span>빨강</span></div>
+      <div class="map-arrow">→</div>
+      <div><span class="grade-pill pill-blue"><span class="grade-dot" style="background: #2563EB;"></span>파랑</span></div>
+      <div class="text-right text-sm font-black">중급</div>
+    </div>
+
+    <div class="map-row hover:bg-mute transition">
+      <div><span class="grade-pill pill-red"><span class="grade-dot" style="background: #DC2626;"></span>빨강</span></div>
+      <div class="map-arrow">→</div>
+      <div><span class="grade-pill pill-green"><span class="grade-dot" style="background: #16A34A;"></span>초록</span></div>
+      <div class="text-right text-sm font-black">초급</div>
+    </div>
+  </div>
+
+  <p class="text-xs text-ink-500 mt-3 px-1">예: 평소 보라를 푸시면 → 대회에서는 빨강을 풀게 됩니다 (상급조)</p>
+
+  <!-- 시상 구조 -->
+  <div class="mt-5 bg-surface border border-line rounded-2xl p-5 shadow-soft">
+    <div class="text-xs text-accent uppercase tracking-wider mb-3 font-black">PRIZES</div>
+    <div class="font-black text-base mb-3">시상은 이렇게 나뉘어요</div>
+    <div class="space-y-2.5">
+      <div class="flex items-center gap-3 p-3.5 bg-mute rounded-xl">
+        <span class="grade-pill pill-red shrink-0">
+          <span class="grade-dot" style="background: #DC2626;"></span>
+          상급
+        </span>
+        <div class="flex-1">
+          <div class="font-black text-sm">상급조 1등 · 1명</div>
+          <div class="text-xs text-ink-700 mt-0.5">빨강 풀이 비율 1위</div>
+        </div>
+      </div>
+      <div class="flex items-center gap-3 p-3.5 bg-mute rounded-xl">
+        <div class="flex flex-col gap-1 shrink-0">
+          <span class="grade-pill pill-blue">
+            <span class="grade-dot" style="background: #2563EB;"></span>
+            중급
+          </span>
+          <span class="grade-pill pill-green">
+            <span class="grade-dot" style="background: #16A34A;"></span>
+            초급
+          </span>
+        </div>
+        <div class="flex-1">
+          <div class="font-black text-sm">중급·초급 통합 1등 · 1명</div>
+          <div class="text-xs text-ink-700 mt-0.5">두 카테고리 합쳐 비율 1위</div>
+        </div>
+      </div>
+    </div>
+    <p class="text-xs text-ink-500 mt-3 leading-relaxed">
+      💡 채점은 <strong class="text-ink-700">완등 비율(푼 갯수 / 전체 갯수)</strong>로 하기 때문에 중급·초급을 합쳐도 공정하게 비교돼요.
+    </p>
+  </div>
+
+  <!-- 카테고리 양심 선택 -->
+  <div class="mt-5 bg-surface border border-line rounded-2xl p-5 shadow-soft">
+    <div class="font-black text-base mb-3">⚖️ 카테고리는 양심껏 선택해주세요</div>
+    <p class="text-sm text-ink-700 leading-relaxed mb-4">같은 색을 평소에 푼다고 해도 사람마다 체감 난이도가 다를 수 있어요. 더 쉬운 카테고리를 선택해서 비율로 유리해지는 걸 막기 위해 본인의 진짜 실력에 맞춰 정직하게 선택해주세요.</p>
+    <div class="space-y-2 text-xs sm:text-sm">
+      <div class="flex gap-2">
+        <span class="font-black shrink-0 w-24" style="color: #DC2626;">상급 (빨강)</span>
+        <span class="text-ink-700">빨강이 평소 무난하다면</span>
+      </div>
+      <div class="flex gap-2">
+        <span class="font-black shrink-0 w-24" style="color: #2563EB;">중급 (파랑)</span>
+        <span class="text-ink-700">파랑이 평소 무난하다면</span>
+      </div>
+      <div class="flex gap-2">
+        <span class="font-black shrink-0 w-24" style="color: #16A34A;">초급 (초록)</span>
+        <span class="text-ink-700">파랑도 6개 지점 다 돌기 힘들 것 같다면</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- 평소 푸는 색 정의 -->
+  <div class="mt-5 bg-mute rounded-2xl p-5 sm:p-6">
+    <div class="flex items-start gap-3">
+      <div class="shrink-0 w-8 h-8 rounded-full bg-ink-900 text-white flex items-center justify-center text-sm font-black">?</div>
+      <div>
+        <div class="font-black mb-2 text-base">"평소 푸는 색" 어떻게 정해요?</div>
+        <p class="text-sm sm:text-base text-ink-700 leading-relaxed">
+          <strong class="text-ink-900">최근 두 달, 두 군데 이상 지점</strong>에서 풀어본 적 있는 가장 높은 색이에요.
+        </p>
+        <p class="text-sm text-ink-500 mt-2 leading-relaxed">
+          지점마다 난이도가 좀 달라서, 한 지점에서 운으로 한두 번 푼 건 빼고 봐요.
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ============================================ 채점 ============================================ -->
+<div class="max-w-3xl mx-auto px-5 py-12 sm:py-14">
+  <div class="text-xs text-accent uppercase tracking-wider mb-3 font-black">SCORING</div>
+  <h2 class="text-3xl sm:text-4xl font-black mb-3 leading-tight">완등 비율로 채점</h2>
+  <p class="text-ink-700 mb-7">시간 안에 더 많이 푼 사람이 이깁니다.</p>
+
+  <div class="bg-surface border border-line rounded-3xl p-6 sm:p-8 shadow-card">
+    <div class="grid grid-cols-3 gap-2 sm:gap-4 text-center">
+      <div>
+        <div class="text-[10px] sm:text-xs text-ink-500 uppercase tracking-wider mb-2 font-bold leading-tight">푼 갯수</div>
+        <div class="text-3xl sm:text-5xl font-black text-accent num">27</div>
+      </div>
+      <div class="flex items-center justify-center pt-6">
+        <span class="text-2xl sm:text-4xl text-ink-300 font-light">/</span>
+      </div>
+      <div>
+        <div class="text-[10px] sm:text-xs text-ink-500 uppercase tracking-wider mb-2 font-bold leading-tight">전체 갯수</div>
+        <div class="text-3xl sm:text-5xl font-black num">90</div>
+      </div>
+    </div>
+    <div class="my-6 h-px bg-line"></div>
+    <div class="text-center">
+      <div class="text-xs text-ink-500 uppercase tracking-wider mb-2 font-bold">최종 점수</div>
+      <div class="text-5xl sm:text-7xl font-black text-accent num">30%</div>
+    </div>
+    <div class="mt-6 pt-6 border-t border-line text-center text-sm text-ink-700">
+      <strong class="text-ink-900">상급 1등</strong> · <strong class="text-ink-900">중급·초급 통합 1등</strong> 시상 · 동률은 공동 1등
+    </div>
+  </div>
+</div>
+
+<!-- ============================================ 하루 흐름 (시간 미정) ============================================ -->
+<div class="max-w-3xl mx-auto px-5 py-12 sm:py-14">
+  <div class="text-xs text-accent uppercase tracking-wider mb-3 font-black">TIMELINE</div>
+  <h2 class="text-3xl sm:text-4xl font-black mb-3 leading-tight">하루 흐름</h2>
+  <p class="text-ink-700 mb-7"><strong class="text-ink-900">모두 같은 시간, 같은 지점에서 시작</strong>해 한 곳씩 함께 이동해요.</p>
+
+  <!-- 시간 미정 안내 -->
+  <div class="mb-6 bg-accentSoft border border-accent/20 rounded-xl p-4 flex items-start gap-3">
+    <span class="shrink-0 text-accent font-black text-base">⏱</span>
+    <div>
+      <div class="font-black text-sm text-accent mb-1">상세 시간은 추후 공지</div>
+      <p class="text-xs text-ink-700 leading-relaxed">참가자 규모와 지점별 혼잡도를 고려해 시작·점심·종료 시각을 확정한 뒤 카카오톡으로 안내드릴게요.</p>
+    </div>
+  </div>
+
+  <!-- 흐름 다이어그램 (시간 칸 비움) -->
+  <div class="space-y-2">
+    <div class="flex items-stretch gap-3">
+      <div class="w-16 sm:w-20 shrink-0 text-right pt-3">
+        <div class="text-xs font-bold text-ink-300">미정</div>
+      </div>
+      <div class="relative">
+        <div class="w-3 h-3 rounded-full bg-accent ring-4 ring-accentSoft mt-4"></div>
+        <div class="absolute top-7 left-1/2 -translate-x-1/2 w-0.5 h-full bg-line"></div>
+      </div>
+      <div class="flex-1 pb-3">
+        <div class="bg-surface border border-line rounded-xl p-4 shadow-soft">
+          <div class="font-black">집결 · 출발</div>
+          <div class="text-sm text-ink-500 mt-0.5">신사 지점</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="flex items-stretch gap-3">
+      <div class="w-16 sm:w-20 shrink-0 text-right pt-3">
+        <div class="text-xs font-bold text-ink-300">미정</div>
+      </div>
+      <div class="relative">
+        <div class="w-3 h-3 rounded-full bg-ink-300 mt-4"></div>
+        <div class="absolute top-7 left-1/2 -translate-x-1/2 w-0.5 h-full bg-line"></div>
+      </div>
+      <div class="flex-1 pb-3">
+        <div class="bg-surface border border-line rounded-xl p-4 shadow-soft">
+          <div class="font-black">신사 → 논현 → 강남</div>
+          <div class="text-sm text-ink-500 mt-0.5">각 지점 풀이 + 이동</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="flex items-stretch gap-3">
+      <div class="w-16 sm:w-20 shrink-0 text-right pt-3">
+        <div class="text-xs font-bold text-ink-300">미정</div>
+      </div>
+      <div class="relative">
+        <div class="w-3 h-3 rounded-full mt-4" style="background: #EAB308;"></div>
+        <div class="absolute top-7 left-1/2 -translate-x-1/2 w-0.5 h-full bg-line"></div>
+      </div>
+      <div class="flex-1 pb-3">
+        <div class="rounded-xl p-4" style="background: #FEFCE8; border: 1px solid #FDE68A;">
+          <div class="font-black" style="color: #A16207;">점심 휴식</div>
+          <div class="text-sm mt-0.5" style="color: #854D0E;">강남역 인근</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="flex items-stretch gap-3">
+      <div class="w-16 sm:w-20 shrink-0 text-right pt-3">
+        <div class="text-xs font-bold text-ink-300">미정</div>
+      </div>
+      <div class="relative">
+        <div class="w-3 h-3 rounded-full bg-ink-300 mt-4"></div>
+        <div class="absolute top-7 left-1/2 -translate-x-1/2 w-0.5 h-full bg-line"></div>
+      </div>
+      <div class="flex-1 pb-3">
+        <div class="bg-surface border border-line rounded-xl p-4 shadow-soft">
+          <div class="font-black">양재 → 사당 → 이수</div>
+          <div class="text-sm text-ink-500 mt-0.5">각 지점 풀이 + 이동</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="flex items-stretch gap-3">
+      <div class="w-16 sm:w-20 shrink-0 text-right pt-3">
+        <div class="text-xs font-bold text-ink-300">미정</div>
+      </div>
+      <div class="relative"><div class="w-3 h-3 rounded-full bg-accent ring-4 ring-accentSoft mt-4"></div></div>
+      <div class="flex-1 pb-3">
+        <div class="rounded-xl p-4" style="background: #FEE2E2; border: 1px solid #FECACA;">
+          <div class="font-black text-accent">대회 종료 · 기록 마감</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="mt-6 bg-mute rounded-xl p-4 text-sm text-ink-700">
+    <strong class="text-ink-900">팀 안내</strong> · 같은 지점 안에서 팀별로 시작 벽이 달라요. 한 벽에 사람이 몰리지 않게 하려는 배려예요.
+  </div>
+</div>
+
+<!-- ============================================ FAQ ============================================ -->
+<div class="max-w-3xl mx-auto px-5 py-12 sm:py-14">
+  <div class="text-xs text-accent uppercase tracking-wider mb-3 font-black">FAQ</div>
+  <h2 class="text-3xl sm:text-4xl font-black mb-7 leading-tight">자주 묻는 질문</h2>
+
+  <div class="space-y-3">
+    <details class="group bg-surface border-2 border-accent rounded-2xl shadow-soft" open>
+      <summary class="p-5 font-black cursor-pointer flex justify-between items-center gap-3 list-none">
+        <span class="text-base flex items-center gap-2">
+          <span class="text-accent">!</span>
+          일일권으로도 참가 가능한가요?
+        </span>
+        <span class="text-ink-300 group-open:rotate-180 transition shrink-0">▼</span>
+      </summary>
+      <div class="px-5 pb-5 text-sm sm:text-base text-ink-700 leading-relaxed">
+        <strong class="text-ink-900">아니요, 일일권은 참가 불가합니다.</strong> 더클라임 일일권은 하루에 한 지점만 이용할 수 있어, 6개 지점을 다 도는 이 대회와 맞지 않아요. <strong class="text-ink-900">횟수권(5회·10회) 또는 개월권</strong> 보유자만 참가할 수 있습니다.
+      </div>
+    </details>
+
+    <details class="group bg-surface border border-line rounded-2xl shadow-soft">
+      <summary class="p-5 font-black cursor-pointer flex justify-between items-center gap-3 list-none">
+        <span class="text-base">정확한 시간은 언제 알 수 있나요?</span>
+        <span class="text-ink-300 group-open:rotate-180 transition shrink-0">▼</span>
+      </summary>
+      <div class="px-5 pb-5 text-sm sm:text-base text-ink-700 leading-relaxed">
+        참가자 규모와 지점별 혼잡도를 고려해 시작·점심·종료 시각을 확정한 뒤 카카오톡으로 따로 안내드릴게요. 일자(<strong class="text-ink-900">5월 10일 토요일</strong>)는 확정입니다.
+      </div>
+    </details>
+
+    <details class="group bg-surface border border-line rounded-2xl shadow-soft">
+      <summary class="p-5 font-black cursor-pointer flex justify-between items-center gap-3 list-none">
+        <span class="text-base">참가비 환불 가능한가요?</span>
+        <span class="text-ink-300 group-open:rotate-180 transition shrink-0">▼</span>
+      </summary>
+      <div class="px-5 pb-5 text-sm sm:text-base text-ink-700 leading-relaxed">
+        신청 후 입금 시점부터 환불 불가합니다. 신중히 결정해주세요.
+      </div>
+    </details>
+
+    <details class="group bg-surface border border-line rounded-2xl shadow-soft">
+      <summary class="p-5 font-black cursor-pointer flex justify-between items-center gap-3 list-none">
+        <span class="text-base">기록은 어떻게 검증되나요?</span>
+        <span class="text-ink-300 group-open:rotate-180 transition shrink-0">▼</span>
+      </summary>
+      <div class="px-5 pb-5 text-sm sm:text-base text-ink-700 leading-relaxed">
+        사진/영상 인증 없이 본인 양심에 맡깁니다. 같은 팀에서 함께 도는 동료들이 자연스러운 견제 역할을 합니다.
+      </div>
+    </details>
+
+    <details class="group bg-surface border border-line rounded-2xl shadow-soft">
+      <summary class="p-5 font-black cursor-pointer flex justify-between items-center gap-3 list-none">
+        <span class="text-base">게스트도 참가할 수 있나요?</span>
+        <span class="text-ink-300 group-open:rotate-180 transition shrink-0">▼</span>
+      </summary>
+      <div class="px-5 pb-5 text-sm sm:text-base text-ink-700 leading-relaxed">
+        크루원이 아닌 게스트도 동일한 참가비로 참가 가능하며, 시상 대상입니다.
+      </div>
+    </details>
+
+    <details class="group bg-surface border border-line rounded-2xl shadow-soft">
+      <summary class="p-5 font-black cursor-pointer flex justify-between items-center gap-3 list-none">
+        <span class="text-base">팀별로 시작 지점이 달라요?</span>
+        <span class="text-ink-300 group-open:rotate-180 transition shrink-0">▼</span>
+      </summary>
+      <div class="px-5 pb-5 text-sm sm:text-base text-ink-700 leading-relaxed">
+        아니요, 모두 같은 지점에서 같은 시간에 시작합니다. 같은 지점 안에서 한 벽에 사람이 몰리지 않도록 <strong class="text-ink-900">팀별 첫 시작 벽만</strong> 다릅니다.
+      </div>
+    </details>
+  </div>
+</div>
+
+<!-- ============================================ 마무리 ============================================ -->
+<div class="max-w-3xl mx-auto px-5 py-16 sm:py-20">
+  <div class="bg-surface border border-line rounded-3xl p-8 sm:p-12 text-center shadow-card">
+    <h2 class="text-3xl sm:text-5xl font-black mb-5 leading-tight">여기까지 요강이에요</h2>
+    <p class="text-ink-700 mb-3 text-base sm:text-lg leading-relaxed">
+      자세한 시간과 신청 방법은 일정이 확정되는 대로<br class="hidden sm:block"/>
+      <strong class="text-ink-900">크루 단톡방</strong>으로 다시 안내드릴게요.
+    </p>
+    <p class="text-ink-500 mt-6 text-sm">
+      읽어주셔서 감사합니다 🙌
+    </p>
+  </div>
+</div>
+
+<footer class="border-t border-line py-8 text-center text-xs text-ink-500">
+  THE CLIMB GANGNAM TOUR 2026 · 2026.05.10
+</footer>
+
+</body>
+</html>
